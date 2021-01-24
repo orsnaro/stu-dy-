@@ -2,14 +2,14 @@
 #include <math.h>
 #include <errno.h>
 #include <string.h>
- int x,y ;
+ int x,y ; //global
 
-    float mat_add(float A[x][y],float B[x][y],float C[x][y]);
+    float mat_add(float A[],float B[],float C[]);
 
 int main()
 {
 
-     mat_add( A[x][y], B[x][y], C[x][y]);
+     mat_add( A[], B[], C[]); //to test the function
 
 
 return(0);}
@@ -18,9 +18,9 @@ return(0);}
 
 
 
- float mat_add(float A[x][y],float B[x][y],float C[x][y]);
+ float mat_add(float A[],float B[],float C[]);
 {
-     A[x][y] = B[x][y] = C[x][y] = x= y= 0;
+     x=0, y=0;
 
   int row_num,colm_num,chk_row,chk_colm;
 
@@ -47,8 +47,13 @@ do
         sleep(2);
 }while(  chk_row!=1||chk_colm!=1|| row_num>4 || row_num<0||  colm_num>4 || colm_num<0); //restrictions for user input
 
+ x=row_num ;
+ y=colm_num;
+
+ A[]=A[x][y];
 printf("\n\n\t \a Success!!---> Array 'A' set to rank = %ix%i i.e. (A[%i][%i]). \n\n",row_num,colm_num,row_num,colm_num);
-x=row_num;y=colm_num;
+
+
 printf("PLEASE! fill Array 'A' --(values row by row)-- ==>\n\n ------START INPUT-----=");
 
 scanf("%f",A);
